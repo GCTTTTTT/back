@@ -19,6 +19,17 @@ public class ArtFullMod {
     private Integer artLegal;
     private Integer artCusId;
 
+//    update:
+    private String websiteUrl;
+
+    public String getWebsiteUrl() {
+        return websiteUrl;
+    }
+
+    public void setWebsiteUrl(String websiteUrl) {
+        this.websiteUrl = websiteUrl;
+    }
+
     // 文章作者
     private Customer customer;
     private ArtFeatureCount artFeature;
