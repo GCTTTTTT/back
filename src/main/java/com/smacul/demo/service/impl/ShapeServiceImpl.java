@@ -10,6 +10,9 @@ import com.smacul.demo.service.ShapeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+//update:3.15 类别名称转换
+import com.smacul.demo.util.ArtTypeConverter;
+
 @Service
 public class ShapeServiceImpl implements ShapeService {
 
@@ -25,6 +28,9 @@ public class ShapeServiceImpl implements ShapeService {
     @Override
     public Boolean setCusBehaviorArtEdit(Integer cusId, Integer artId) {
         String artType = artDao.getArtTypeByArtId(artId);
+        artType = ArtTypeConverter.convertArtType(artType); // update: 3.15 类别名称转换
+
+        System.out.println("+================================================+"+artType);
         Integer cbr = cbrDao.addCusBehavior(cusId, cusId, 1, artId, 1, artId);
         Integer cfc = cusFeatureCountDao.updateCusFeature(cusId, "cfc_" + artType, 1);
         if (cbr == 1 && cfc == 1) {
@@ -37,6 +43,10 @@ public class ShapeServiceImpl implements ShapeService {
     @Override
     public Boolean setCusBehaviorArtRead(Integer cusId, Integer artId) {
         String artType = artDao.getArtTypeByArtId(artId);
+        artType = ArtTypeConverter.convertArtType(artType); // update: 3.15 类别名称转换
+
+        System.out.println("+=========2=======================================+"+artType);
+
         Integer artCusId = artDao.getArtCusIdByArtId(artId);
         Integer cbr = 0;
         Integer cfc = 0;
@@ -57,6 +67,10 @@ public class ShapeServiceImpl implements ShapeService {
     @Override
     public Boolean setCusBehaviorArtLike(Integer cusId, Integer artId, Boolean type) {
         String artType = artDao.getArtTypeByArtId(artId);
+        artType = ArtTypeConverter.convertArtType(artType); // update: 3.15 类别名称转换
+
+        System.out.println("+=========3=======================================+"+artType);
+
         Integer artCusId = artDao.getArtCusIdByArtId(artId);
         if (type) {
             Integer cbr = cbrDao.addCusBehavior(cusId, artCusId, 3, artId, 1, artId);
@@ -79,6 +93,10 @@ public class ShapeServiceImpl implements ShapeService {
     @Override
     public Boolean setCusBehaviorArtDislike(Integer cusId, Integer artId, Boolean type) {
         String artType = artDao.getArtTypeByArtId(artId);
+        artType = ArtTypeConverter.convertArtType(artType); // update: 3.15 类别名称转换
+
+        System.out.println("+=========4=======================================+"+artType);
+
         Integer artCusId = artDao.getArtCusIdByArtId(artId);
         if (type) {
             Integer cbr = cbrDao.addCusBehavior(cusId, artCusId, 4, artId, 1, artId);

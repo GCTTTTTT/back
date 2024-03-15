@@ -20,7 +20,18 @@ public class ArtFullMod {
     private Integer artCusId;
 
 //    update:
+    private Integer websiteId;
+
+
     private String websiteUrl;
+
+    public Integer getWebsiteId() {
+        return websiteId;
+    }
+
+    public void setWebsiteId(Integer websiteId) {
+        this.websiteId = websiteId;
+    }
 
     public String getWebsiteUrl() {
         return websiteUrl;
