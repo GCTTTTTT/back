@@ -31,6 +31,9 @@ public class LoadServiceImpl implements LoadService {
     @Override
     public List<String> getArtTypesForNew() {
         List<String> result = artDao.getArtTypesOrderByTypeNum();
+        System.out.println("=========================");
+        System.out.println(result);
+//        System.out.println(TypeHandler.typeTransAllEnToCh(result));
         return TypeHandler.typeTransAllEnToCh(result);
     }
 

@@ -37,11 +37,19 @@ public class TypeHandler {
     //
     //}
 
+//    update:3.16
     public static List<String> typeTransAllEnToCh(List<String> enTypes) {
+//        for (int i = 0; i < enTypes.size(); i++) {
+//            for (int j = 0; j < en.length; j++) {
+//                if (enTypes.get(i).equals(en[j])) {
+//                    enTypes.set(i, ch[j]);
+//                }
+//            }
+//        }
         for (int i = 0; i < enTypes.size(); i++) {
-            for (int j = 0; j < en.length; j++) {
-                if (enTypes.get(i).equals(en[j])) {
-                    enTypes.set(i, ch[j]);
+            for (int j = 0; j < mango.length; j++) {
+                if (enTypes.get(i).equals(mango[j])) {
+                    enTypes.set(i, mango[j]);
                 }
             }
         }
@@ -74,12 +82,14 @@ public class TypeHandler {
 //                return ch[i];
 //            }
 //        }
-        for (int i = 0; i < mango_en.length; i++) {
-            if (enType.equals(mango_en[i])) {
-                return mango[i];
-            }
-        }
-        return null;
+//        update:3.16
+        return enType;
+//        for (int i = 0; i < mango_en.length; i++) {
+//            if (enType.equals(mango_en[i])) {
+//                return mango[i];
+//            }
+//        }
+//        return null;
     }
     
     public static String typeTransSingleChToEn(String chType) {
@@ -89,9 +99,10 @@ public class TypeHandler {
 //            }
 //        }
 //        update:3.15 mango-en
+//        update：3.16 mango-mango
         for (int i = 0; i < mango.length; i++) {
             if (chType.equals(mango[i])) {
-                return mango_en[i];
+                return mango[i];
             }
         }
         return null;

@@ -174,6 +174,7 @@ public class SelfController {
     @RequestMapping("/dynamic")
     public List<CusDynamicMod> getCusDynamic(
             @RequestParam Integer cusId, @RequestParam Integer page, @RequestParam Integer pageSize) {
+        System.out.println("+=================================================================");
         if (session.getAttribute("customer") == null) {
             return null;
         }

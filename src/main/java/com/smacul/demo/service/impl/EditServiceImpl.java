@@ -16,6 +16,7 @@ public class EditServiceImpl implements EditService {
     @Override
     public String addNewArt(Article article) {
         String type = article.getArtType();
+
         article.setArtType(TypeHandler.typeTransSingleChToEn(type));
         article.setArtLegal(1);
         if (artDao.addArt(article) == 1) {
